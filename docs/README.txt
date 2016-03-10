@@ -1,0 +1,1 @@
+QT version used: 5.3.0
