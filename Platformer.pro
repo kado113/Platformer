@@ -4,17 +4,20 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui opengl
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = tmp
 TEMPLATE = app
 
+CONFIG += c++14
 
 SOURCES += src\main.cpp\
-        src\MainWidget.cpp
+        src\MainWidget.cpp \
+    src/RenderWidget.cpp
 
-HEADERS  += src\MainWidget.h
+HEADERS  += src\MainWidget.h \
+    src/RenderWidget.h
 
 FORMS    += ui\MainWidget.ui

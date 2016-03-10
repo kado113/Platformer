@@ -3,7 +3,10 @@
 
 #include <QWidget>
 
-namespace Ui {
+#include <QOpenGLWidget>
+
+namespace Ui
+{
 class MainWidget;
 }
 
@@ -12,7 +15,7 @@ class MainWidget : public QWidget
     Q_OBJECT
 
 public:
-    explicit MainWidget(QWidget *parent = 0);
+    explicit MainWidget(QWidget *parent = nullptr);
     ~MainWidget();
 
 private:
