@@ -1,8 +1,11 @@
 #include "RenderWidget.h"
 
+#include "IRenderObject.h"
+
+
 RenderWidget::RenderWidget(QWidget *parent)
     : QOpenGLWidget(parent)
-
+    , m_rootRenderObject(RRoot::create())
 {
 
 }
@@ -12,15 +15,16 @@ RenderWidget::~RenderWidget()
 
 }
 
-void GLWidget::initializeGL()
+void RenderWidget::initializeGL()
 {
-/*    initializeOpenGLFunctions();
+    initializeOpenGLFunctions();
 
-    makeObject();
+//    makeObject();
 
     glEnable(GL_DEPTH_TEST);
     glEnable(GL_CULL_FACE);
 
+    /*
 #define PROGRAM_VERTEX_ATTRIBUTE 0
 #define PROGRAM_TEXCOORD_ATTRIBUTE 1
 
@@ -59,12 +63,13 @@ void GLWidget::initializeGL()
     */
 }
 
-void GLWidget::paintGL()
+void RenderWidget::paintGL()
 {
-    /*
+    QColor clearColor(Qt::red);
     glClearColor(clearColor.redF(), clearColor.greenF(), clearColor.blueF(), clearColor.alphaF());
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
+    /*
     QMatrix4x4 m;
     m.ortho(-0.5f, +0.5f, +0.5f, -0.5f, 4.0f, 15.0f);
     m.translate(0.0f, 0.0f, -10.0f);
@@ -84,7 +89,7 @@ void GLWidget::paintGL()
     }
     */
 }
-void GLWidget::resizeGL(int width, int height)
+void RenderWidget::resizeGL(int width, int height)
 {
     int side = qMin(width, height);
     glViewport((width - side) / 2, (height - side) / 2, side, side);

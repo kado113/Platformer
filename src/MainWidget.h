@@ -3,8 +3,6 @@
 
 #include <QWidget>
 
-#include <QOpenGLWidget>
-
 namespace Ui
 {
 class MainWidget;

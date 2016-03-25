@@ -13,11 +13,15 @@ TEMPLATE = app
 
 CONFIG += c++14
 
-SOURCES += src\main.cpp\
-        src\MainWidget.cpp \
-    src/RenderWidget.cpp
+SOURCES +=  src\main.cpp\
+            src\MainWidget.cpp \
+            src/RenderWidget.cpp \
+            src/IRenderObject.cpp \
+    src/renderObjects/RRect.cpp
 
 HEADERS  += src\MainWidget.h \
-    src/RenderWidget.h
+            src/RenderWidget.h \
+            src/IRenderObject.h \
+    src/renderObjects/RRect.h
 
 FORMS    += ui\MainWidget.ui
